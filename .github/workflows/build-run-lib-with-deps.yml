@@ -88,7 +88,7 @@ jobs:
 
       - name: Copy Files
         run: |
-          cp -r ./libs/${{  env.LIB_LOWER  }}/.github/workflows/sample_defs sample_defs
+          cp -r ./libs/${{  env.LIB_LOWER  }}/.github/workflows/sample_defs ./
           ls sample_defs
 
       - name: Make install

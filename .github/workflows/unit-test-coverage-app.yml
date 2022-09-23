@@ -88,7 +88,7 @@ jobs:
 
       - name: Copy Files
         run: |
-          cp -r ./apps/${{  env.APP_LOWER  }}/.github/workflows/sample_defs sample_defs
+          cp -r ./apps/${{  env.APP_LOWER  }}/.github/workflows/sample_defs ./
 
       - name: Make Prep
         run: make SIMULATION=native ENABLE_UNIT_TESTS=true OMIT_DEPRECATED=true prep

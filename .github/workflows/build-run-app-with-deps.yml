@@ -88,7 +88,7 @@ jobs:
 
       - name: Copy Files
         run: |
-          cp -r ./apps/${{  env.APP_LOWER  }}/.github/workflows/sample_defs sample_defs
+          cp -r ./apps/${{  env.APP_LOWER  }}/.github/workflows/sample_defs ./
 
       - name: Make install
         run: make SIMULATION=native BUILDTYPE=release OMIT_DEPRECATED=true install
@@ -97,6 +97,7 @@ jobs:
         working-directory: ./build/exe/cpu1
         run: |
           ./core-cpu1 > ../../../cFS_startup_cpu1.txt &
+          sleep 30
 
       - name: Archive results
         uses: actions/upload-artifact@v2

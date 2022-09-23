@@ -96,7 +96,8 @@ jobs:
       - name: Run cFS
         working-directory: ./build/exe/cpu1
         run: |
-          ./core-cpu1 > ../../../cFS_startup_cpu1.txt
+          ./core-cpu1 > ../../../cFS_startup_cpu1.txt &
+          sleep 30
 
       - name: Archive results
         uses: actions/upload-artifact@v2

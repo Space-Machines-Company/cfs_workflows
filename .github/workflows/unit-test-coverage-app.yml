@@ -90,6 +90,9 @@ jobs:
         run: |
           cp -r ./apps/${{  env.APP_LOWER  }}/.github/workflows/sample_defs sample_defs
 
+      - name: Make Prep
+        run: make SIMULATION=native ENABLE_UNIT_TESTS=true OMIT_DEPRECATED=true prep
+      
       - name: Build app build dependencies
         run: make -C build/tools/elf2cfetbl
 

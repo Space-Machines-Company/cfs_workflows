@@ -89,8 +89,6 @@ jobs:
       - name: Copy Files
         run: |
           cp -r ./libs/${{  env.LIB_LOWER  }}/.github/workflows/sample_defs ./
-          ls sample_defs
-
       - name: Make install
         run: make SIMULATION=native BUILDTYPE=release OMIT_DEPRECATED=true install
 

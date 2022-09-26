@@ -19,6 +19,11 @@ on:
         type: number
         required: false
         default: 0
+      mission:
+        description: mission tag to grab repos from
+        type: string
+        required: false
+        default: 'mission0'
       module-location:
         description: module location - should differentiate between libs and apps
         type: string

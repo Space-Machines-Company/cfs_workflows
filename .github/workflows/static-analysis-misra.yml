@@ -49,14 +49,8 @@ jobs:
   
       - name: Run app cppcheck
         run: |
-          echo $MISRA_RULES > misra-rules.txt
           echo "{\"script\": \"misra.py\",\"args\": [\"--rule-texts=.github/workflows/misra.txt\"]}" > misra.json
-          ls
-          cat misra.json
-          cppcheck --version
           cppcheck --addon=misra.json --force --inline-suppr --std=c99 --language=c --enable=warning,performance,portability,style --quiet ./fsw ./unit-test 2> cppcheck_err.txt
-        env:
-          MISRA_RULES: ${{secrets.MISRA_2012_CPPCHECK_RULES}}
 
       - name: Archive Static Analysis Artifacts
         uses: actions/upload-artifact@v2

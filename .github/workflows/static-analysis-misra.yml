@@ -50,7 +50,7 @@ jobs:
       - name: Run app cppcheck
         run: |
           echo $MISRA_RULES > misra-rules.txt
-          echo "{\"script\": \"misra.py\",\"args\": [\"--rule-texts=$(pwd)/misra-rules.txt\"]}" > misra.json
+          echo "{\"script\": \"misra.py\",\"args\": [\"--rule-texts=.github/workflows/misra.txt\"]}" > misra.json
           ls
           cat misra.json
           cppcheck --version

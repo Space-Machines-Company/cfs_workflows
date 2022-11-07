@@ -49,7 +49,7 @@ jobs:
   
       - name: Run app cppcheck
         run: |
-          echo "{\"script\": \"misra.py\",\"args\": [\"--rule-texts=.github/workflows/misra.txt\"]}" > misra.json
+          echo "{\"script\": \"misra.py\",\"args\": [\"--rule-texts=.github/workflows/misra.txt\", \"--supress-rules=17.7,20.10\"]}" > misra.json
           cppcheck --addon=misra.json --force --inline-suppr --std=c99 --language=c --enable=warning,performance,portability,style --quiet ./fsw 2> cppcheck_err.txt
 
       - name: Archive Static Analysis Artifacts
